@@ -62,6 +62,12 @@ def root():
     return FileResponse("swagger.html", media_type="text/html")
 
 
+@app.get("/doble/{numero}")
+def doble(numero: int):
+    """Recibe un número entero en la ruta y devuelve el mismo multiplicado por 2."""
+    return {"numero": numero, "doble": numero * 2}
+
+
 if __name__ == "__main__":
     import uvicorn
 
